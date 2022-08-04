@@ -5,7 +5,8 @@ public class CaseTriggerHandler {
         list<Case> lstCases = new list<Case>();
         
         for(Case c : newCases){
-            setAccount.add(c.AccountId);
+            if(c.AccountId != null){
+                setAccount.add(c.AccountId);}
         }
         
         list<Account> lstAccount = [SELECT Id, (SELECT Origin, ParentId, AccountId FROM Cases ORDER BY CreatedDate ASC) 
@@ -15,11 +16,13 @@ public class CaseTriggerHandler {
         }
         
         for(Case c : newCases){
+            if(c.accountid != null){
             for(Case oldCase : accountToCase.get(c.AccountId)){
                 if((c.Origin == oldCase.Origin) && (c.Id != oldCase.Id)){
                     lstCases.add(new Case(Id = c.Id, ParentId = oldCase.Id));
                     break;
                 }
+            }
             }
         }
         update lstCases;

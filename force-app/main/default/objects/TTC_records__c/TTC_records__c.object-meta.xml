@@ -152,7 +152,7 @@
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>true</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
@@ -164,6 +164,7 @@
         <displayFormat>TTC-{00000}</displayFormat>
         <label>Technical Team Collaboration</label>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>TTC records</pluralLabel>
